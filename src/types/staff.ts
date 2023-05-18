@@ -1,6 +1,7 @@
 export interface StaffRequestStatus {
 
     getItem: Status;
+    addItem: Status
 
 }
 
@@ -30,6 +31,24 @@ export interface Staff {
     phone: string;
     id: string;
     isSuspended: boolean;
+
+}
+
+export interface StaffPost {
+    
+        companyId: string;
+        userId: string;
+        name: string;
+        phone: string;
+        altPhoneNumber: string;
+        email: string;
+        address: string;
+        city: string;
+        state: string;
+        roles: string[
+          
+        ]
+      
 
 }
 

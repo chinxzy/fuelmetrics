@@ -21,6 +21,7 @@ const staff: Module<State, Rootstate> = {
     staffRequestStatus: {
 
       getItem: Status.IDLE,
+      addItem: Status.IDLE
 
     },
     staff: {
@@ -47,7 +48,17 @@ const staff: Module<State, Rootstate> = {
       state.staffRequestError = error;
       state.staffRequestStatus.getItem = Status.ERROR;
     },
-
+    [ACTIONS.ADD_STAFF_LOADING](state: State): void {
+        state.staffRequestStatus.addItem = Status.LOADING;
+      },
+  
+      [ACTIONS.ADD_STAFF_SUCCESS](state: State): void {
+        state.staffRequestStatus.addItem = Status.SUCCESS;
+      },
+      [ACTIONS.ADD_STAFF_ERROR](state: State, error: string): void {
+        state.staffRequestStatus.addItem = Status.ERROR;
+        state.staffRequestError= error;
+      },
 
   },
 
@@ -82,6 +93,23 @@ const staff: Module<State, Rootstate> = {
           
         } catch (response: any) {
           commit(ACTIONS.GET_STAFF_ERROR, response.response.status);
+          console.log("error: ", response.response.status);
+        }
+  
+      },
+
+      async addStaff({ commit }: { commit: Commit }, staff) {
+        try {
+          const token = localStorage.getItem("token")
+          const Authorization = ` Bearer ${token}`;
+          commit(ACTIONS.ADD_STAFF_LOADING)
+          const {data}  = await axios.post(
+            `${api}/CompanyUser/Add/afbb88d4-cd29-4509-aaf3-47321f69f34b`,staff, { headers: { Authorization } }
+          );
+          commit(ACTIONS.ADD_STAFF_SUCCESS, data);
+          
+        } catch (response: any) {
+          commit(ACTIONS.ADD_STAFF_ERROR, response.response.status);
           console.log("error: ", response.response.status);
         }
   

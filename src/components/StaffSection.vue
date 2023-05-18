@@ -1,6 +1,15 @@
 <template>
   <div class="container-fluid">
     <nav-bar />
+    <div class="d-flex mt-4 justify-content-end">
+      <button
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#myModal"
+      >
+        Add New Staff
+      </button>
+    </div>
     <div class="main container">
       <table class="table" ref="el">
         <thead>
@@ -47,6 +56,126 @@
         </tbody>
       </table>
     </div>
+
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+        ></button>
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Add New Staff</h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="justify-content-center">
+              <form>
+                <div class="form-block">
+                  <p>Name:</p>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter product name"
+                    v-model="name"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>User ID:</p>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter product name"
+                    v-model="userID"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>Phone:</p>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter phone number"
+                    v-model="phone"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>Alt Phone:</p>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter alt phone number"
+                    v-model="altPhoneNumber"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>email:</p>
+
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Enter email"
+                    v-model="email"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>Address:</p>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter adrress"
+                    v-model="address"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>City:</p>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter City"
+                    v-model="city"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>State:</p>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter State"
+                    v-model="state"
+                  />
+                </div>
+                <div class="form-block">
+                  <p>Role:</p>
+
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Role"
+                    v-model="role"
+                  />
+                </div>
+                <div class="d-flex justify-content-end">
+                  <button
+                    @click="addStaff()"
+                    type="button"
+                    class="btn"
+                    data-bs-dismiss="modal"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -54,13 +183,25 @@ import { computed, defineComponent, inject, ref } from "vue";
 import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 import { State } from "../store/modules/staff";
-import { staffList, Status } from "../types/staff";
+import { staffList, StaffPost, Status } from "../types/staff";
 import { Staff } from "../types/staff";
 import moment from "moment";
 
 export default defineComponent({
   data() {
-    return {};
+    return {
+      companyId: "afbb88d4-cd29-4509-aaf3-47321f69f34b",
+      userID: "",
+      name: "",
+      phone: "",
+      altPhoneNumber: "",
+      email: "",
+      address: "",
+      city: "",
+      state: "",
+      role: "",
+      staffRole: [] as string[],
+    };
   },
   setup() {
     const store = useStore();
@@ -119,6 +260,23 @@ export default defineComponent({
     },
     suspendStaff(id: string) {
       this.store.dispatch("staff/suspendStaff", id);
+    },
+    addStaff() {
+      this.staffRole.push(this.role);
+      const staff: StaffPost = {
+        companyId: this.companyId,
+        userId: this.userID,
+        name: this.name,
+        phone: this.phone,
+        altPhoneNumber: this.altPhoneNumber,
+        email: this.email,
+        address: this.address,
+        city: this.city,
+        state: this.state,
+        roles: this.staffRole,
+      };
+      this.store.dispatch("staff/addStaff", staff);
+      console.log(staff);
     },
   },
   mounted() {
