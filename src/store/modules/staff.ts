@@ -76,8 +76,7 @@ const staff: Module<State, Rootstate> = {
           const Authorization = ` Bearer ${token}`;
           commit(ACTIONS.GET_STAFF_LOADING)
           const {data}  = await axios.put(
-            `${api}/CompanyUser/SuspendStaff/afbb88d4-cd29-4509-aaf3-47321f69f34b/?staffId=${id}
-            `, { headers: { Authorization } }
+            `${api}/CompanyUser/SuspendStaff/afbb88d4-cd29-4509-aaf3-47321f69f34b?staffId=${id}`, { headers: { Authorization } }
           );
           commit(ACTIONS.GET_STAFF_SUCCESS, data);
           

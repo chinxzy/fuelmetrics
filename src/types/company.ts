@@ -73,7 +73,7 @@ export interface Dashboard {
     vouchers: number;
     vehicles: number;
     companyUsers: number;
-    subAccount: number;
+    subAccounts: number;
     totalConsumption: number;
     
 
@@ -83,7 +83,7 @@ export const defaultDashboardDetails = {
     vouchers: 0,
     vehicles: 0,
     companyUsers: 0,
-    subAccount: 0,
+    subAccounts: 0,
     totalConsumption: 0,
 }
 

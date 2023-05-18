@@ -70,7 +70,7 @@
                   <h4>Vouchers</h4>
                   <h1>{{ dashboard.vouchers }}</h1>
                 </div>
-                <div class="icon">
+                <div class="icon voucher">
                   <span class="material-symbols-outlined"> receipt_long </span>
                 </div>
               </div>
@@ -83,8 +83,10 @@
                   <h1>{{ dashboard.vehicles }}</h1>
                 </div>
 
-                <div class="icon">
-                  <span class="material-symbols-outlined"> payments </span>
+                <div class="icon vehicle">
+                  <span class="material-symbols-outlined">
+                    directions_car
+                  </span>
                 </div>
               </div>
 
@@ -93,8 +95,8 @@
                   <h4>Users</h4>
                   <h1>{{ dashboard.companyUsers }}</h1>
                 </div>
-                <div class="icon">
-                  <span class="material-symbols-outlined"> receipt_long </span>
+                <div class="icon user">
+                  <span class="material-symbols-outlined"> person </span>
                 </div>
               </div>
             </div>
@@ -103,11 +105,13 @@
               <div class="orders box d-flex">
                 <div class="info">
                   <h4>Sub Accounts</h4>
-                  <h1>{{ dashboard.subAccount }}</h1>
+                  <h1>{{ dashboard.subAccounts }}</h1>
                 </div>
 
                 <div class="icon">
-                  <span class="material-symbols-outlined"> payments </span>
+                  <span class="material-symbols-outlined">
+                    account_circle
+                  </span>
                 </div>
               </div>
 
@@ -117,7 +121,9 @@
                   <h1>{{ dashboard.totalConsumption }}</h1>
                 </div>
                 <div class="icon">
-                  <span class="material-symbols-outlined"> receipt_long </span>
+                  <span class="material-symbols-outlined">
+                    collections_bookmark
+                  </span>
                 </div>
               </div>
             </div>

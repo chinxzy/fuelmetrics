@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Module, Commit } from "vuex";
 import LocalStorageService from "../../services/localStorageService";
-import { query } from "../../types/general";
 import { AuthRequestStatus,  UserLogin, Status} from "../../types/login";
 import { State as Rootstate } from "../index";
 import * as ACTIONS from '../types';
