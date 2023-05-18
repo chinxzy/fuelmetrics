@@ -37,7 +37,7 @@
               </button>
               <ul class="dropdown-menu justify-content-center p-3">
                 <li v-if="staff.isSuspended.toString() != 'true'">
-                  <button class="btn" @click="suspendStaff(Number(staff.id))">
+                  <button class="btn" @click="suspendStaff(staff.id)">
                     Suspend
                   </button>
                 </li>
@@ -117,7 +117,7 @@ export default defineComponent({
 
       return returnText;
     },
-    suspendStaff(id: number) {
+    suspendStaff(id: string) {
       this.store.dispatch("staff/suspendStaff", id);
     },
   },
