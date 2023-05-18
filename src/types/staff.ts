@@ -27,7 +27,7 @@ export interface Staff {
     address: string;
     state: string;
     email: string;
-    phoneNumber: string;
+    phone: string;
     id: string;
     isSuspended: boolean;
 

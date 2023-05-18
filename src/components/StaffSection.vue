@@ -14,8 +14,8 @@
             <th></th>
           </tr>
         </thead>
-        <div v-if="orderLoading" class="d-flex justify-content-center loadin">
-          <img src="../assets/loading.gif" alt="" class="img-fluid" />
+        <div v-if="staffLoading" class="d-flex justify-content-center loadin">
+          loading
         </div>
         <tbody v-else>
           <tr v-for="staff in staffs" :key="staff.id">
@@ -37,13 +37,8 @@
               </button>
               <ul class="dropdown-menu justify-content-center p-3">
                 <li v-if="staff.isSuspended.toString() != 'true'">
-                  <button class="btn" @click="suspendStaff(staff.id)">
+                  <button class="btn" @click="suspendStaff(Number(staff.id))">
                     Suspend
-                  </button>
-                </li>
-                <li v-else>
-                  <button class="btn" @click="forgiveStaff(staff.id)">
-                    Unsuspend
                   </button>
                 </li>
               </ul>

@@ -103,7 +103,7 @@
               <div class="orders box d-flex">
                 <div class="info">
                   <h4>Sub Accounts</h4>
-                  <h1>{{ dashboard.subAccounts }}</h1>
+                  <h1>{{ dashboard.subAccount }}</h1>
                 </div>
 
                 <div class="icon">
