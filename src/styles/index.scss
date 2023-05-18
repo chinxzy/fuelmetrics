@@ -1,0 +1,175 @@
+.navbar-brand {
+    width: 5em;
+    @media screen and (max-width: 600px) {
+      width: 5em;
+  }
+
+}
+.navbar {
+  background-color:  #032139;
+  
+}
+.collapse {
+    width: 100% !important;
+    .nav-item{
+      padding: 1em;
+      color: #fff !important
+    }
+    .nav-link{
+      color: #fff !important
+    }
+    .nav-item :hover{
+      background-color: #685D66;
+      
+    }
+    .material-symbols-outlined{
+color: #f7500e;
+    }
+}
+.name-div{
+  .wrapper{
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow:  20px 20px 60px #d9d9d9,
+    -20px -20px 60px #ffffff;
+
+  
+  }
+}
+.wallet-div{
+  background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+}
+.business{
+  .wrapper{
+    background-color: #fff;
+    border-radius: 0.5em;
+    box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  }
+  .details{
+    
+    h3{
+      text-align: center;
+      margin-bottom: 2em !important;
+      margin-top: 1em;
+      
+    }
+    .d-flex{
+      margin-bottom: 2em;
+      text-align: left !important;
+    }
+  }
+}
+.contact{
+  .wrapper{
+    .d-flex{
+margin-bottom: 2em;
+    }
+.box{
+  width: 24em;
+}
+             .orders {
+              padding: 1em;
+              border-left: 4px solid  #01B860;
+              background: #FFFFFF;
+              box-shadow: 9px 9px 18px #8d8d8d,
+                  -9px -9px 18px #ffffff;
+              border-radius: 8px;
+      
+              .info {
+                  margin-right: 4em;
+      
+                  h4 {
+                      font-weight: 500;
+                      color: #333333;
+                      font-family: 'Poppins', sans-serif;
+                  }
+      
+                  h1 {
+                      font-weight: 600;
+                      color: #46314D;
+                      font-family: 'Poppins', sans-serif;
+                  }
+      
+                  span {
+                      font-size: 1.1em;
+                      margin-right: 1em;
+                      font-family: 'Poppins', sans-serif;
+                  }
+      
+                  .span {
+                      margin-right: 1em;
+                      color: green !important
+                  }
+      
+                  .pending {
+                      color: orange !important
+                  }
+      
+                  .canceled {
+                      color: red !important;
+                  }
+              }
+      
+              .icon {
+                  border-radius: 10em 10em 10em 10em;
+                  background: rgba(1, 184, 96, 0.1);
+                  width: 6em;
+                  height: 6em;
+                  text-align: center;
+      
+      
+                  .material-symbols-outlined {
+                      font-size: 4em;
+                      padding-top: 0.2em;
+                      
+                      color: #01B860;
+      
+                  }
+              }
+          }
+      
+          .revenue {
+              padding: 1em;
+              border-left: 4px solid #B86401;
+              background: #FFFFFF;
+              box-shadow: 9px 9px 18px #8d8d8d,
+                  -9px -9px 18px #ffffff;
+              border-radius: 8px;
+      
+              div {
+      
+                  h4 {
+                      font-weight: 500;
+                      color: #333333;
+                      font-family: 'Poppins', sans-serif;
+                  }
+      
+                  h1 {
+                      font-weight: 600;
+                      color: #46314D;
+                      font-family: 'Poppins', sans-serif;
+                  }
+              }
+      
+              .icon {
+                  border-radius: 10em 10em 10em 10em;
+                  background: rgba(184, 100, 1, 0.1);
+                  width: 6em;
+                  height: 6em;
+                  text-align: center;
+                  margin-left: 4em;
+      
+                  .material-symbols-outlined {
+                      font-size: 4em;
+                      padding-top: 0.2em;
+                      color: #B86401;
+                  }
+              }
+          }
+  }
+ 
+}
